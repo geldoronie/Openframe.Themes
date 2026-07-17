@@ -1,0 +1,14 @@
+{
+  "name" : "OpenFrame Windows 11 ",
+  "description" : "Openframe Theme Windows 11 Like",
+  "gtk_theme" : "Win11-Fantasy-Light",
+  "icon_theme" : "Windows11",
+  "cursor_theme" : "",
+  "labwc_theme" : "OpenFrame",
+  "cursor_size" : 24,
+  "font" : "Cantarell 9",
+  "wallpaper" : "backgrounds/windows-11-blue-stock-white-background-light-official-2880x1800-5616.jpg",
+  "wallpaper_display" : "zoom",
+  "background_color" : "rgb(21,29,56)",
+  "version" : "1.1.0"
+}

@@ -1,0 +1,197 @@
+{
+  "compositor" : "labwc",
+  "labwc" : {
+    "themeName" : "OpenFrame",
+    "cornerRadius" : 4,
+    "fontName" : "Sans",
+    "fontSize" : 10,
+    "fontNameActive" : "Sans",
+    "fontSizeActive" : 10,
+    "borderWidth" : 2,
+    "windowActiveBorderColor" : "#f6f5f4",
+    "windowInactiveBorderColor" : "#deddda",
+    "windowActiveTitleBgType" : "Solid",
+    "windowActiveTitleBgColor" : "#f6f5f4",
+    "windowActiveTitleBgColorTo" : "#f6f5f4",
+    "windowActiveLabelTextColor" : "#091119",
+    "windowInactiveTitleBgType" : "Solid",
+    "windowInactiveTitleBgColor" : "#f6f5f4",
+    "windowInactiveLabelTextColor" : "#091119",
+    "windowActiveButtonBgColor" : "#c0c0c0",
+    "windowActiveButtonHoverBgColor" : "#a0a0a0",
+    "windowActiveButtonPressedBgColor" : "#808080",
+    "windowInactiveButtonBgColor" : "#c0c0c0",
+    "windowButtonWidth" : 24,
+    "windowButtonHeight" : 24,
+    "windowButtonSpacing" : 1,
+    "windowTitlebarPaddingWidth" : 3,
+    "windowTitlebarPaddingHeight" : 3,
+    "menuItemsBgColor" : "#c0c0c0",
+    "menuItemsTextColor" : "#000000",
+    "menuTitleBgColor" : "#c0c0c0",
+    "menuTitleTextColor" : "#000000",
+    "osdBgColor" : "#c0c0c0",
+    "osdLabelTextColor" : "#000000",
+    "osdBorderColor" : "#404040",
+    "osdBorderWidth" : 2,
+    "handleWidth" : 4,
+    "handleBgColor" : "#c0c0c0"
+  },
+  "wayfire" : {
+    "pluginEnabled" : {
+      "alpha" : true,
+      "animate" : true,
+      "autostart" : true,
+      "command" : true,
+      "cube" : true,
+      "decoration" : true,
+      "expo" : true,
+      "fast-switcher" : true,
+      "fisheye" : false,
+      "foreign-toplevel" : true,
+      "grid" : true,
+      "gtk-shell" : true,
+      "idle" : false,
+      "invert" : true,
+      "move" : true,
+      "oswitch" : true,
+      "place" : true,
+      "resize" : true,
+      "session-lock" : true,
+      "shortcuts-inhibit" : true,
+      "switcher" : true,
+      "vswitch" : true,
+      "window-rules" : true,
+      "wm-actions" : true,
+      "wobbly" : false,
+      "wrot" : true,
+      "zoom" : true,
+      "blur" : true
+    },
+    "vwidth" : 4,
+    "vheight" : 1,
+    "preferredDecorationMode" : "client",
+    "closeTopView" : "<alt> KEY_F4",
+    "animate" : {
+      "openAnimation" : "fade",
+      "closeAnimation" : "fade",
+      "duration" : 300,
+      "enabledFor" : "type is toplevel",
+      "fireDuration" : 300,
+      "fireParticles" : 2000,
+      "fireColor" : "227 151 31 255",
+      "fadeDuration" : 400,
+      "zoomDuration" : 500
+    },
+    "move" : {
+      "activate" : "<alt> BTN_LEFT",
+      "enableSnap" : 1,
+      "snapThreshold" : 10,
+      "enableSnapOff" : 1,
+      "snapOffThreshold" : 0
+    },
+    "resize" : {
+      "activate" : "<alt> BTN_RIGHT"
+    },
+    "switcher" : {
+      "nextView" : "<alt> KEY_TAB",
+      "prevView" : "<alt> <shift> KEY_TAB"
+    },
+    "fastSwitcher" : {
+      "activate" : "<alt> KEY_ESC"
+    },
+    "vswitch" : {
+      "bindingLeft" : "<super> KEY_LEFT",
+      "bindingRight" : "<super> KEY_RIGHT",
+      "bindingUp" : "<super> KEY_UP",
+      "bindingDown" : "<super> KEY_DOWN",
+      "withWinLeft" : "<super> <shift> KEY_LEFT",
+      "withWinRight" : "<super> <shift> KEY_RIGHT",
+      "withWinUp" : "<super> <shift> KEY_UP",
+      "withWinDown" : "<super> <shift> KEY_DOWN",
+      "durationMs" : 300
+    },
+    "wobbly" : {
+      "friction" : 3.0,
+      "springK" : 8.0,
+      "gridResolution" : 6
+    },
+    "zoom" : {
+      "modifier" : " SUPER"
+    },
+    "alpha" : {
+      "modifier" : " SUPER"
+    },
+    "wrot" : {
+      "activate" : "<alt> BTN_MIDDLE"
+    },
+    "fisheye" : {
+      "toggle" : "<super> KEY_F"
+    },
+    "cube" : {
+      "activate" : "<ctrl> <alt> BTN_MIDDLE",
+      "rotateLeft" : "<ctrl> <alt>  KEY_LEFT",
+      "rotateRight" : "<ctrl> <alt> KEY_RIGHT"
+    },
+    "expo" : {
+      "toggle" : "<super> KEY_E",
+      "selectWorkspace1" : "<super> KEY_1",
+      "selectWorkspace2" : "<super> KEY_2",
+      "selectWorkspace3" : "<super> KEY_3",
+      "selectWorkspace4" : "<super> KEY_4",
+      "selectWorkspace5" : "<super> KEY_5",
+      "selectWorkspace6" : "<super> KEY_6",
+      "selectWorkspace7" : "<super> KEY_7",
+      "selectWorkspace8" : "<super> KEY_8",
+      "selectWorkspace9" : "<super> KEY_9"
+    },
+    "grid" : {
+      "slotBl" : " <ctrl> <alt>KEY_KP_1",
+      "slotB" : " <ctrl> <alt>KEY_KP_2",
+      "slotBr" : " <ctrl> <alt>KEY_KP_3",
+      "slotL" : " <ctrl> <alt>  KEY_KP_4",
+      "slotC" : " <ctrl> <alt> KEY_KP_5",
+      "slotR" : " <ctrl> <alt>KEY_KP_6",
+      "slotTl" : " <super> KEY_KP_7",
+      "slotT" : "  <super> KEY_KP_8",
+      "slotTr" : "  <super> KEY_KP_9",
+      "restore" : " <ctrl> <alt> KEY_KP_0"
+    },
+    "wmActions" : {
+      "toggleFullscreen" : " KEY_F11",
+      "toggleAlwaysOnTop" : "<super> KEY_A",
+      "toggleSticky" : "<super> KEY_S"
+    },
+    "oswitch" : {
+      "nextOutput" : "<super> KEY_O",
+      "nextOutputWithWin" : "<super> <shift> KEY_O"
+    },
+    "invert" : {
+      "toggle" : "<super> KEY_I"
+    },
+    "place" : {
+      "mode" : "center"
+    },
+    "decoration" : {
+      "activeColor" : "#000000FF",
+      "inactiveColor" : "#000000FF",
+      "borderSize" : 4,
+      "titleHeight" : 24,
+      "fontColor" : "#FFFFFFFF",
+      "buttonOrder" : "minimize maximize close",
+      "font" : "sans-serif",
+      "ignoreViews" : "none"
+    },
+    "command" : {
+      "items" : []
+    },
+    "windowRules" : {
+      "lines" : []
+    },
+    "idle" : {
+      "toggle" : "<super> KEY_Z",
+      "screensaverTimeout" : 300,
+      "dpmsTimeout" : 600
+    }
+  }
+}
