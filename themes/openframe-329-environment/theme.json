@@ -1,0 +1,15 @@
+{
+  "name" : "Openframe 32:9 Environment",
+  "description" : "",
+  "gtk_theme" : "Abyssal-catppuccin-frappe",
+  "icon_theme" : "Colloid-Dark",
+  "cursor_theme" : "Pop",
+  "labwc_theme" : "BL-Lithium",
+  "cursor_size" : 24,
+  "font" : "Cantarell Light 8",
+  "wallpaper" : "backgrounds/nature.jpg",
+  "wallpaper_display" : "center",
+  "background_color" : "rgb(23,4,49)",
+  "version" : "1.0.0",
+  "bundle_format" : 2
+}
