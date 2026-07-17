@@ -1,0 +1,14 @@
+{
+  "name" : "OpenFrame Astronaut Blue",
+  "description" : "Default Openframe Theme",
+  "gtk_theme" : "Abyssal-dark",
+  "icon_theme" : "Papirus",
+  "cursor_theme" : "",
+  "labwc_theme" : "BL-Lithium",
+  "cursor_size" : 24,
+  "font" : "Adwaita Sans 9",
+  "wallpaper" : "backgrounds/astronaut2.png",
+  "wallpaper_display" : "center",
+  "background_color" : "rgb(21,29,56)",
+  "version" : "1.2.0"
+}

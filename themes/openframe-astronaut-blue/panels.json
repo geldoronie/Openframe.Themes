@@ -1,0 +1,352 @@
+{
+  "panels" : [
+    {
+      "id" : "main",
+      "name" : "Main Taskbar",
+      "enabled" : true,
+      "monitor_target" : "primary",
+      "position" : "bottom",
+      "size" : 34,
+      "width_mode" : "fixed",
+      "width_pixels" : 1920,
+      "width_align" : "center",
+      "height_mode" : "expanded",
+      "height_pixels" : 100,
+      "height_align" : "center",
+      "border_radius" : 7,
+      "margin" : 7,
+      "use_exclusive_zone" : true,
+      "opacity" : 0.80000000000000004,
+      "use_custom_appearance" : true,
+      "background_mode" : "gradient",
+      "background_color" : "rgb(8,24,23)",
+      "background_color_end" : "rgb(5,20,3)",
+      "background_gradient_direction" : "vertical",
+      "font_color" : "rgb(255,255,255)",
+      "visible" : true,
+      "layer" : "bottom",
+      "float_x" : 100,
+      "float_y" : 100,
+      "float_width" : 400,
+      "float_height" : 300,
+      "float_orientation" : "vertical",
+      "float_anchor_panel" : "",
+      "float_anchor_widget" : "",
+      "widgets" : [
+        {
+          "type" : "spacer",
+          "config" : {
+            "size" : 5
+          }
+        },
+        {
+          "type" : "action-button",
+          "config" : {
+            "action" : "toggle-panel",
+            "target_panel" : "panel_1",
+            "icon" : "com.librehat.yahooweather",
+            "label" : "News",
+            "shortcut_key" : "Super+Shift+S"
+          }
+        },
+        {
+          "type" : "spacer",
+          "config" : {
+            "size" : 5
+          }
+        },
+        {
+          "type" : "expander"
+        },
+        {
+          "type" : "action-button",
+          "config" : {
+            "action" : "toggle-panel",
+            "target_panel" : "panel_2",
+            "icon" : "burst",
+            "label" : "",
+            "shortcut_key" : "Super",
+            "h_expand" : false,
+            "v_expand" : true,
+            "width" : 42,
+            "height" : 22,
+            "h_align" : "fill",
+            "v_align" : "fill",
+            "padding_top" : 0,
+            "padding_right" : 0,
+            "padding_bottom" : 0,
+            "padding_left" : 0,
+            "margin_top" : 0,
+            "margin_right" : 0,
+            "margin_bottom" : 0,
+            "margin_left" : 0
+          }
+        },
+        {
+          "type" : "spacer",
+          "config" : {
+            "size" : 5
+          }
+        },
+        {
+          "type" : "search-bar",
+          "config" : {
+            "engine" : "google",
+            "placeholder" : "Search the web...",
+            "shortcut_key" : "Super+S",
+            "border_enabled" : false,
+            "border_color" : "rgb(119,118,123)",
+            "border_radius" : 20,
+            "border_thickness" : 1,
+            "margin" : 0
+          }
+        },
+        {
+          "type" : "spacer",
+          "config" : {
+            "size" : 5
+          }
+        },
+        {
+          "type" : "quick-launch",
+          "id" : "ql1",
+          "shortcuts" : [],
+          "config" : {
+            "show_desktop" : true,
+            "icon_size" : 16,
+            "icon_has_background" : true
+          }
+        },
+        {
+          "type" : "spacer",
+          "config" : {
+            "size" : 5
+          }
+        },
+        {
+          "type" : "windows-list",
+          "config" : {
+            "icon_only" : true,
+            "icon_size" : 16,
+            "button_padding_h" : 6,
+            "button_padding_v" : 1,
+            "flat_button" : false,
+            "group_by" : "app",
+            "pinned_apps" : []
+          }
+        },
+        {
+          "type" : "expander"
+        },
+        {
+          "type" : "spacer",
+          "config" : {
+            "size" : 5
+          }
+        },
+        {
+          "type" : "systray"
+        },
+        {
+          "type" : "network-status"
+        },
+        {
+          "type" : "audio-control",
+          "config" : {
+            "popover_height" : 500
+          }
+        },
+        {
+          "type" : "bluetooth-status"
+        },
+        {
+          "type" : "power-status"
+        },
+        {
+          "type" : "notification-status"
+        },
+        {
+          "type" : "clock",
+          "config" : {
+            "show_seconds" : false,
+            "font_desc" : "Noto Sans 8",
+            "show_date" : true,
+            "stacked" : true,
+            "date_format" : "short"
+          }
+        },
+        {
+          "type" : "spacer",
+          "config" : {
+            "size" : 5
+          }
+        }
+      ]
+    },
+    {
+      "id" : "panel_1",
+      "name" : "News",
+      "enabled" : true,
+      "monitor_target" : "primary",
+      "position" : "floating",
+      "size" : 935,
+      "width_mode" : "expanded",
+      "width_pixels" : 400,
+      "width_align" : "center",
+      "height_mode" : "expanded",
+      "height_pixels" : 510,
+      "height_align" : "start",
+      "border_radius" : 10,
+      "margin" : 15,
+      "use_exclusive_zone" : false,
+      "opacity" : 0.81999999999999995,
+      "use_custom_appearance" : true,
+      "background_mode" : "gradient",
+      "background_color" : "rgb(9,17,25)",
+      "background_color_end" : "rgb(1,20,7)",
+      "background_gradient_direction" : "horizontal",
+      "font_color" : "rgb(255,255,255)",
+      "visible" : false,
+      "layer" : "top",
+      "float_x" : 0,
+      "float_y" : -705,
+      "float_width" : 690,
+      "float_height" : 700,
+      "float_orientation" : "vertical",
+      "float_anchor_panel" : "main",
+      "float_anchor_widget" : "1",
+      "widgets" : [
+        {
+          "type" : "web-view",
+          "config" : {
+            "url" : "https://www.engadget.com/",
+            "padding" : 10
+          }
+        }
+      ]
+    },
+    {
+      "id" : "panel_2",
+      "name" : "LaunchPad",
+      "enabled" : true,
+      "monitor_target" : "primary",
+      "position" : "floating",
+      "size" : 28,
+      "width_mode" : "expanded",
+      "width_pixels" : 400,
+      "width_align" : "center",
+      "height_mode" : "expanded",
+      "height_pixels" : 400,
+      "height_align" : "center",
+      "border_radius" : 10,
+      "margin" : 0,
+      "use_exclusive_zone" : false,
+      "opacity" : 0.90000000000000002,
+      "use_custom_appearance" : true,
+      "background_mode" : "gradient",
+      "background_color" : "rgb(1,20,7)",
+      "background_color_end" : "rgb(4,25,6)",
+      "background_gradient_direction" : "vertical",
+      "font_color" : "rgb(255,255,255)",
+      "visible" : false,
+      "layer" : "top",
+      "float_x" : 0,
+      "float_y" : -605,
+      "float_width" : 600,
+      "float_height" : 600,
+      "float_orientation" : "horizontal",
+      "float_anchor_panel" : "main",
+      "float_anchor_widget" : "4",
+      "on_show" : "0:focus-search",
+      "on_hide" : "0:clear-search",
+      "widgets" : [
+        {
+          "type" : "app-pad",
+          "config" : {
+            "show_native" : true,
+            "show_wine" : true,
+            "show_control_panel" : true,
+            "show_webapps" : true,
+            "icon_size" : 32,
+            "max_recent" : 20,
+            "on_click_action" : "hide-parent",
+            "h_expand" : true,
+            "v_expand" : true,
+            "width" : -1,
+            "height" : -1,
+            "h_align" : "fill",
+            "v_align" : "fill",
+            "padding_top" : 15,
+            "padding_right" : 15,
+            "padding_bottom" : 15,
+            "padding_left" : 15,
+            "margin_top" : 0,
+            "margin_right" : 0,
+            "margin_bottom" : 0,
+            "margin_left" : 0
+          }
+        },
+        {
+          "type" : "line-break"
+        },
+        {
+          "type" : "user-info",
+          "config" : {
+            "h_expand" : true,
+            "v_expand" : false,
+            "width" : -1,
+            "height" : -1,
+            "h_align" : "start",
+            "v_align" : "start",
+            "padding_top" : 0,
+            "padding_right" : 15,
+            "padding_bottom" : 15,
+            "padding_left" : 15,
+            "margin_top" : 0,
+            "margin_right" : 0,
+            "margin_bottom" : 0,
+            "margin_left" : 0
+          }
+        },
+        {
+          "type" : "action-button",
+          "config" : {
+            "action" : "execute-app",
+            "target_panel" : "main",
+            "icon" : "xsi-shutdown-symbolic",
+            "label" : "",
+            "shortcut_key" : "",
+            "app_id" : "shutdown",
+            "app_command" : "openframe --app=shutdown",
+            "app_name" : "Shutdown",
+            "h_expand" : false,
+            "v_expand" : false,
+            "width" : -1,
+            "height" : -1,
+            "h_align" : "end",
+            "v_align" : "center",
+            "padding_top" : 0,
+            "padding_right" : 0,
+            "padding_bottom" : 0,
+            "padding_left" : 0,
+            "margin_top" : 0,
+            "margin_right" : 15,
+            "margin_bottom" : 0,
+            "margin_left" : 0
+          }
+        }
+      ]
+    }
+  ],
+  "desktop" : {
+    "show_my_computer" : true,
+    "show_my_documents" : true,
+    "show_network_neighborhood" : true,
+    "show_recycle_bin" : true,
+    "show_favorites" : true,
+    "use_large_icons" : false,
+    "icon_positions" : {    },
+    "desktop_icon_order" : [],
+    "desktop_icon_slots" : {    }
+  }
+}
