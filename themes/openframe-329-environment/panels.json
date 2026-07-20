@@ -7,7 +7,7 @@
       "monitor_target" : "all",
       "position" : "bottom",
       "size" : 34,
-      "width_mode" : "fixed",
+      "width_mode" : "expanded",
       "width_pixels" : 1920,
       "width_align" : "center",
       "height_mode" : "expanded",
@@ -48,6 +48,15 @@
             "label" : "News",
             "shortcut_key" : "Super+Shift+S"
           }
+        },
+        {
+          "type" : "spacer",
+          "config" : {
+            "size" : 30
+          }
+        },
+        {
+          "type" : "now-playing"
         },
         {
           "type" : "spacer",
@@ -319,67 +328,6 @@
       ]
     },
     {
-      "id" : "panel_4",
-      "name" : "Now Playing",
-      "enabled" : true,
-      "monitor_target" : "all",
-      "position" : "floating",
-      "size" : 28,
-      "width_mode" : "expanded",
-      "width_pixels" : 400,
-      "width_align" : "center",
-      "height_mode" : "expanded",
-      "height_pixels" : 400,
-      "height_align" : "center",
-      "border_radius" : 10,
-      "margin" : 10,
-      "use_exclusive_zone" : false,
-      "opacity" : 0.91000000000000003,
-      "use_custom_appearance" : true,
-      "background_mode" : "solid",
-      "background_color" : "rgb(21,29,56)",
-      "background_color_end" : "rgb(77,77,77)",
-      "background_gradient_direction" : "horizontal",
-      "font_color" : "rgb(255,255,255)",
-      "visible" : false,
-      "layer" : "top",
-      "float_x" : -90,
-      "float_y" : -160,
-      "float_width" : 200,
-      "float_height" : 100,
-      "float_orientation" : "vertical",
-      "float_anchor_panel" : "main",
-      "float_anchor_widget" : "18",
-      "widgets" : [
-        {
-          "type" : "expander"
-        },
-        {
-          "type" : "now-playing",
-          "config" : {
-            "orientation" : "vertical",
-            "h_expand" : true,
-            "v_expand" : true,
-            "width" : -1,
-            "height" : -1,
-            "h_align" : "fill",
-            "v_align" : "fill",
-            "padding_top" : 0,
-            "padding_right" : 0,
-            "padding_bottom" : 0,
-            "padding_left" : 0,
-            "margin_top" : 0,
-            "margin_right" : 0,
-            "margin_bottom" : 0,
-            "margin_left" : 0
-          }
-        },
-        {
-          "type" : "expander"
-        }
-      ]
-    },
-    {
       "id" : "panel_2",
       "name" : "LaunchPad",
       "enabled" : true,
@@ -410,7 +358,7 @@
       "float_height" : 600,
       "float_orientation" : "horizontal",
       "float_anchor_panel" : "main",
-      "float_anchor_widget" : "4",
+      "float_anchor_widget" : "7",
       "on_show" : "0:focus-search",
       "on_hide" : "0:clear-search;0:reset-category",
       "widgets" : [
