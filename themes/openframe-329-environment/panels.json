@@ -184,33 +184,6 @@
           "type" : "clipboard-history"
         },
         {
-          "type" : "action-button",
-          "config" : {
-            "action" : "toggle-panel",
-            "target_panel" : "panel_4",
-            "icon" : "xsi-emblem-music-symbolic",
-            "label" : "",
-            "shortcut_key" : "",
-            "app_id" : "",
-            "app_command" : "",
-            "app_name" : "(none)",
-            "h_expand" : false,
-            "v_expand" : false,
-            "width" : -1,
-            "height" : -1,
-            "h_align" : "fill",
-            "v_align" : "fill",
-            "padding_top" : 0,
-            "padding_right" : 0,
-            "padding_bottom" : 0,
-            "padding_left" : 0,
-            "margin_top" : 0,
-            "margin_right" : 0,
-            "margin_bottom" : 0,
-            "margin_left" : 0
-          }
-        },
-        {
           "type" : "notification-status"
         },
         {

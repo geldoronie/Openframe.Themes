@@ -2906,27 +2906,27 @@ windowcontrols > button.minimize:backdrop:hover:not(.raised):not(.suggested-acti
 }
 
 windowcontrols > button.minimize:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: #E5C890;
+  background-color: #FFD16D;
 }
 
 windowcontrols > button.minimize:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: mix(black,#E5C890,0.75);
+  background-color: mix(black,#FFD16D,0.75);
 }
 
 windowcontrols > button.maximize:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: #8CAAEE;
+  background-color: #448FFF;
 }
 
 windowcontrols > button.maximize:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: mix(black,#8CAAEE,0.75);
+  background-color: mix(black,#448FFF,0.75);
 }
 
 windowcontrols > button.close:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: #E78284;
+  background-color: #F38BA8;
 }
 
 windowcontrols > button.close:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: mix(black,#E78284,0.75);
+  background-color: mix(black,#F38BA8,0.75);
 }
 
 windowcontrols {
@@ -8362,7 +8362,7 @@ menubutton stack > box {
 
 .running-stopwatch .seconds-label,
 .running-stopwatch .miliseconds-label {
-  color: #8CAAEE;
+  color: #448FFF;
 }
 
 .stopped-stopwatch .miliseconds-label,
@@ -8395,20 +8395,20 @@ menubutton stack > box {
 }
 
 .night .clock-time {
-  color: #8CAAEE;
-  background-color: alpha(#8CAAEE, 0.25);
+  color: #448FFF;
+  background-color: alpha(#448FFF, 0.25);
 }
 
 .naut .clock-time,
 .astro .clock-time {
-  color: #EF9F76;
-  background-color: alpha(#EF9F76, 0.25);
+  color: #FFD16D;
+  background-color: alpha(#FFD16D, 0.25);
 }
 
 .civil .clock-time,
 .day .clock-time {
-  color: #E5C890;
-  background: alpha(#E5C890, 0.25);
+  color: #FFD16D;
+  background: alpha(#FFD16D, 0.25);
 }
 
 .exit-info {
@@ -8717,7 +8717,7 @@ screenshot-carousel button,
 }
 
 .origin-beta {
-  color: #E5C890;
+  color: #FFD16D;
 }
 
 .origin-button > button {
@@ -8979,7 +8979,7 @@ button.star {
 }
 
 star-image {
-  color: #E5C890;
+  color: #FFD16D;
 }
 
 .dimmer-label {
@@ -8999,7 +8999,7 @@ star-image {
 }
 
 .upgrade-banner-background {
-  background: linear-gradient(to bottom, #A6D189, #8CAAEE);
+  background: linear-gradient(to bottom, #8BD5CA, #448FFF);
   color: white;
 }
 
@@ -9143,8 +9143,8 @@ carousel.card {
 }
 
 .context-tile-lozenge.blue, .context-tile-lozenge.details-rating-5 {
-  color: #8CAAEE;
-  background-color: alpha(#8CAAEE, 0.15);
+  color: #448FFF;
+  background-color: alpha(#448FFF, 0.15);
 }
 
 .context-tile-lozenge.yellow, .context-tile-lozenge.details-rating-12 {
@@ -9153,8 +9153,8 @@ carousel.card {
 }
 
 .context-tile-lozenge.details-rating-15 {
-  color: #EF9F76;
-  background-color: alpha(#EF9F76, 0.15);
+  color: #FFD16D;
+  background-color: alpha(#FFD16D, 0.15);
 }
 
 .context-tile-lozenge.red, .context-tile-lozenge.details-rating-18 {
@@ -9225,7 +9225,7 @@ row.app > box.header > image {
 }
 
 row.app label.warning {
-  color: #E78284;
+  color: #F38BA8;
 }
 
 @keyframes pre-delay {
@@ -9660,51 +9660,51 @@ window#desktopwindow.background {
 /* GTK NAMED COLORS
    ----------------
    use responsibly! */
-@define-color accent_bg_color #8CAAEE;
-@define-color accent_fg_color rgba(48, 52, 70, 0.87);
-@define-color accent_color #8CAAEE;
-@define-color destructive_bg_color #E78284;
-@define-color destructive_fg_color rgba(48, 52, 70, 0.87);
-@define-color destructive_color #E78284;
-@define-color success_bg_color #A6D189;
-@define-color success_fg_color rgba(48, 52, 70, 0.87);
-@define-color success_color #A6D189;
-@define-color warning_bg_color #E5C890;
-@define-color warning_fg_color rgba(48, 52, 70, 0.87);
-@define-color warning_color #E5C890;
-@define-color error_bg_color #E78284;
-@define-color error_fg_color rgba(48, 52, 70, 0.87);
-@define-color error_color #E78284;
-@define-color window_bg_color #303446;
-@define-color window_fg_color #C6D0F5;
-@define-color view_bg_color #303446;
-@define-color view_fg_color #C6D0F5;
-@define-color headerbar_bg_color #303446;
-@define-color headerbar_fg_color #C6D0F5;
-@define-color headerbar_border_color #C6D0F5;
-@define-color headerbar_backdrop_color #292C3C;
+@define-color accent_bg_color #448FFF;
+@define-color accent_fg_color #D4D9EB;
+@define-color accent_color #448FFF;
+@define-color destructive_bg_color #F38BA8;
+@define-color destructive_fg_color rgba(6, 17, 21, 0.87);
+@define-color destructive_color #F38BA8;
+@define-color success_bg_color #8BD5CA;
+@define-color success_fg_color rgba(6, 17, 21, 0.87);
+@define-color success_color #8BD5CA;
+@define-color warning_bg_color #FFD16D;
+@define-color warning_fg_color rgba(6, 17, 21, 0.87);
+@define-color warning_color #FFD16D;
+@define-color error_bg_color #F38BA8;
+@define-color error_fg_color rgba(6, 17, 21, 0.87);
+@define-color error_color #F38BA8;
+@define-color window_bg_color #0C171B;
+@define-color window_fg_color #D4D9EB;
+@define-color view_bg_color #0C171B;
+@define-color view_fg_color #D4D9EB;
+@define-color headerbar_bg_color #0C171B;
+@define-color headerbar_fg_color #D4D9EB;
+@define-color headerbar_border_color #D4D9EB;
+@define-color headerbar_backdrop_color #0C171B;
 @define-color headerbar_shade_color rgba(0, 0, 0, 0.36);
-@define-color headerbar_darker_shade_color rgba(48, 52, 70, 0.75);
-@define-color sidebar_bg_color #292C3C;
-@define-color sidebar_fg_color #C6D0F5;
-@define-color sidebar_backdrop_color #303446;
+@define-color headerbar_darker_shade_color rgba(6, 17, 21, 0.75);
+@define-color sidebar_bg_color #0C171B;
+@define-color sidebar_fg_color #D4D9EB;
+@define-color sidebar_backdrop_color #0C171B;
 @define-color sidebar_shade_color rgba(0, 0, 0, 0.25);
-@define-color sidebar_border_color rgba(198, 208, 245, 0.08);
-@define-color secondary_sidebar_bg_color #303446;
-@define-color secondary_sidebar_fg_color #C6D0F5;
-@define-color secondary_sidebar_backdrop_color #303446;
+@define-color sidebar_border_color rgba(212, 217, 235, 0.08);
+@define-color secondary_sidebar_bg_color #0C171B;
+@define-color secondary_sidebar_fg_color #D4D9EB;
+@define-color secondary_sidebar_backdrop_color #0C171B;
 @define-color secondary_sidebar_shade_color rgba(0, 0, 0, 0.25);
 @define-color secondary_sidebar_border_color #1C272B;
-@define-color card_bg_color rgba(198, 208, 245, 0.04);
-@define-color card_fg_color #C6D0F5;
+@define-color card_bg_color rgba(212, 217, 235, 0.04);
+@define-color card_fg_color #D4D9EB;
 @define-color card_shade_color rgba(0, 0, 0, 0.36);
-@define-color dialog_bg_color #292C3C;
-@define-color dialog_fg_color #C6D0F5;
-@define-color popover_bg_color #303446;
-@define-color popover_fg_color #C6D0F5;
+@define-color dialog_bg_color #0C171B;
+@define-color dialog_fg_color #D4D9EB;
+@define-color popover_bg_color #0C171B;
+@define-color popover_fg_color #D4D9EB;
 @define-color popover_shade_color rgba(0, 0, 0, 0.25);
-@define-color thumbnail_bg_color #303446;
-@define-color thumbnail_fg_color #C6D0F5;
+@define-color thumbnail_bg_color #1C272B;
+@define-color thumbnail_fg_color #D4D9EB;
 @define-color shade_color rgba(0, 0, 0, 0.25);
 @define-color scrollbar_outline_color rgba(0, 0, 0, 0.5);
 /* Public colors from Default */
@@ -12464,27 +12464,27 @@ windowcontrols > button.minimize:backdrop:hover:not(.raised):not(.suggested-acti
 }
 
 windowcontrols > button.minimize:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: #E5C890;
+  background-color: #FFD16D;
 }
 
 windowcontrols > button.minimize:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: mix(black,#E5C890,0.75);
+  background-color: mix(black,#FFD16D,0.75);
 }
 
 windowcontrols > button.maximize:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: #8CAAEE;
+  background-color: #448FFF;
 }
 
 windowcontrols > button.maximize:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: mix(black,#8CAAEE,0.75);
+  background-color: mix(black,#448FFF,0.75);
 }
 
 windowcontrols > button.close:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: #E78284;
+  background-color: #F38BA8;
 }
 
 windowcontrols > button.close:active:not(.raised):not(.suggested-action):not(.destructive-action):not(.opaque) > image {
-  background-color: mix(black,#E78284,0.75);
+  background-color: mix(black,#F38BA8,0.75);
 }
 
 windowcontrols {
@@ -17920,7 +17920,7 @@ menubutton stack > box {
 
 .running-stopwatch .seconds-label,
 .running-stopwatch .miliseconds-label {
-  color: #8CAAEE;
+  color: #448FFF;
 }
 
 .stopped-stopwatch .miliseconds-label,
@@ -17953,20 +17953,20 @@ menubutton stack > box {
 }
 
 .night .clock-time {
-  color: #8CAAEE;
-  background-color: alpha(#8CAAEE, 0.25);
+  color: #448FFF;
+  background-color: alpha(#448FFF, 0.25);
 }
 
 .naut .clock-time,
 .astro .clock-time {
-  color: #EF9F76;
-  background-color: alpha(#EF9F76, 0.25);
+  color: #FFD16D;
+  background-color: alpha(#FFD16D, 0.25);
 }
 
 .civil .clock-time,
 .day .clock-time {
-  color: #E5C890;
-  background: alpha(#E5C890, 0.25);
+  color: #FFD16D;
+  background: alpha(#FFD16D, 0.25);
 }
 
 .exit-info {
@@ -18275,7 +18275,7 @@ screenshot-carousel button,
 }
 
 .origin-beta {
-  color: #E5C890;
+  color: #FFD16D;
 }
 
 .origin-button > button {
@@ -18537,7 +18537,7 @@ button.star {
 }
 
 star-image {
-  color: #E5C890;
+  color: #FFD16D;
 }
 
 .dimmer-label {
@@ -18557,7 +18557,7 @@ star-image {
 }
 
 .upgrade-banner-background {
-  background: linear-gradient(to bottom, #A6D189, #8CAAEE);
+  background: linear-gradient(to bottom, #8BD5CA, #448FFF);
   color: white;
 }
 
@@ -18701,8 +18701,8 @@ carousel.card {
 }
 
 .context-tile-lozenge.blue, .context-tile-lozenge.details-rating-5 {
-  color: #8CAAEE;
-  background-color: alpha(#8CAAEE, 0.15);
+  color: #448FFF;
+  background-color: alpha(#448FFF, 0.15);
 }
 
 .context-tile-lozenge.yellow, .context-tile-lozenge.details-rating-12 {
@@ -18711,8 +18711,8 @@ carousel.card {
 }
 
 .context-tile-lozenge.details-rating-15 {
-  color: #EF9F76;
-  background-color: alpha(#EF9F76, 0.15);
+  color: #FFD16D;
+  background-color: alpha(#FFD16D, 0.15);
 }
 
 .context-tile-lozenge.red, .context-tile-lozenge.details-rating-18 {
@@ -18783,7 +18783,7 @@ row.app > box.header > image {
 }
 
 row.app label.warning {
-  color: #E78284;
+  color: #F38BA8;
 }
 
 @keyframes pre-delay {
