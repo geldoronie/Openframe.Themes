@@ -1,0 +1,15 @@
+{
+  "name" : "Openframe The Explorer Default",
+  "description" : "O universo\natravés do\nframe.\nNão tem dono. Tem exploradores.\nUm sistema Linux aberto, leve o bastante para dar fôlego a qualquer computador e afinado para jogar e trabalhar sem desperdiçar o seu hardware.",
+  "gtk_theme" : "Catppuccin-Peach-Dark",
+  "icon_theme" : "Tela-dark",
+  "cursor_theme" : "Ubuntosh-Icons",
+  "labwc_theme" : "Arc-Clone",
+  "cursor_size" : 24,
+  "font" : "System-ui 8",
+  "wallpaper" : "backgrounds/2K_20261009232430.jpg",
+  "wallpaper_display" : "center",
+  "background_color" : "rgb(11,11,42)",
+  "version" : "1.0.0",
+  "bundle_format" : 2
+}
