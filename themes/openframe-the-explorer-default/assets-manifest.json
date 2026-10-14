@@ -1,0 +1,75 @@
+{
+  "manifest_version" : 1,
+  "assets" : [
+    {
+      "component" : "gtk-theme",
+      "source" : "gtk-theme",
+      "apply_target" : "~/.local/share/themes/OpenFrame-Dark"
+    },
+    {
+      "component" : "icon-theme",
+      "source" : "icon-theme",
+      "apply_target" : "~/.local/share/icons/Colloid-Dark"
+    },
+    {
+      "component" : "cursor-theme",
+      "source" : "cursor-theme",
+      "apply_target" : "~/.local/share/icons/Ubuntosh-Icons"
+    },
+    {
+      "component" : "labwc-theme",
+      "source" : "labwc-theme",
+      "apply_target" : "~/.local/share/themes/Boron-dark"
+    },
+    {
+      "component" : "greeter-icon-theme",
+      "source" : "greeter-icon-theme",
+      "apply_target" : "~/.local/share/icons/Papirus-Adapta-Nokto-Maia"
+    },
+    {
+      "component" : "fonts",
+      "source" : "fonts",
+      "apply_target" : "~/.local/share/fonts/openframe-the-explorer-default"
+    },
+    {
+      "component" : "wallpaper",
+      "source" : "backgrounds",
+      "apply_target" : "$XDG_DATA_HOME/openframe/backgrounds"
+    },
+    {
+      "component" : "panel-assets",
+      "source" : "assets",
+      "apply_target" : "$XDG_DATA_HOME/openframe/panel-assets/openframe-the-explorer-default"
+    },
+    {
+      "component" : "panels",
+      "source" : "panels.json",
+      "apply_target" : "~/.config/openframe/panels.json"
+    },
+    {
+      "component" : "window-manager",
+      "source" : "window-manager.json",
+      "apply_target" : "~/.config/openframe/window-manager.json"
+    },
+    {
+      "component" : "wayfire",
+      "source" : "wayfire",
+      "apply_target" : "~/.config/openframe/wayfire"
+    },
+    {
+      "component" : "splash",
+      "source" : "splash",
+      "apply_target" : "~/.config/openframe/splash.json (+ localized backgrounds)"
+    },
+    {
+      "component" : "greeter",
+      "source" : "greeter",
+      "apply_target" : "/etc/openframe/greeter.json (+ localized backgrounds)"
+    },
+    {
+      "component" : "terminal",
+      "source" : "terminal/config.json",
+      "apply_target" : "~/.config/openframe-terminal/config.json"
+    }
+  ]
+}
