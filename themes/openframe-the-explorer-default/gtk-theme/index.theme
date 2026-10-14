@@ -1,12 +1,11 @@
-Type=X-GNOME-Metatheme
 [Desktop Entry]
-Name=Catppuccin-Peach-Dark
-Comment=An Flat Gtk+ theme based on Elegant Design
+Type=X-GNOME-Metatheme
+Name=OpenFrame-Dark
+Comment=OpenFrame official dark theme — deep-space black with the brand aurora accent
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Catppuccin-Peach-Dark
-MetacityTheme=Catppuccin-Peach-Dark
-IconTheme=Tela-circle-Dark
-CursorTheme=Catppuccin-cursors
-ButtonLayout=close,minimize,maximize:menu
+GtkTheme=OpenFrame-Dark
+MetacityTheme=OpenFrame-Dark
+IconTheme=Papirus-Dark
+ButtonLayout=:minimize,maximize,close

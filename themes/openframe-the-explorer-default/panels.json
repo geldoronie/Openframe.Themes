@@ -21,12 +21,13 @@
       "margin" : 4,
       "use_exclusive_zone" : true,
       "opacity" : 0.88,
-      "use_custom_appearance" : true,
+      "use_custom_appearance" : false,
       "background_mode" : "gradient",
       "background_color" : "rgb(38,38,38)",
       "background_color_end" : "rgb(0,0,0)",
       "background_gradient_direction" : "vertical",
       "font_color" : "rgb(154,153,150)",
+      "use_custom_font_color" : false,
       "border_enabled" : true,
       "border_width" : 1,
       "border_mode" : "gradient",
@@ -73,10 +74,10 @@
             "app_id" : "",
             "app_command" : "",
             "app_name" : "(none)",
-            "h_expand" : true,
-            "v_expand" : true,
-            "width" : -1,
-            "height" : -1,
+            "h_expand" : false,
+            "v_expand" : false,
+            "width" : 32,
+            "height" : 22,
             "h_align" : "fill",
             "v_align" : "fill",
             "padding_top" : 0,
@@ -179,12 +180,11 @@
           "type" : "windows-list",
           "config" : {
             "icon_only" : true,
+            "flat_button" : true,
             "icon_size" : 16,
             "button_padding_h" : 13,
             "button_padding_v" : 1,
-            "flat_button" : true,
-            "group_by" : "app",
-            "pinned_apps" : []
+            "group_by" : "app"
           }
         },
         {
@@ -271,22 +271,23 @@
       "background_color_end" : "rgb(1,20,7)",
       "background_gradient_direction" : "horizontal",
       "font_color" : "rgb(255,255,255)",
-      "border_enabled" : false,
+      "use_custom_font_color" : false,
+      "border_enabled" : true,
       "border_width" : 1,
-      "border_mode" : "solid",
+      "border_mode" : "gradient",
       "border_color" : "rgb(255,255,255)",
       "border_gradient_direction" : "horizontal",
       "border_stops" : [
         {
-          "color" : "rgb(255,255,255)",
+          "color" : "rgb(119,118,123)",
           "size" : 25.0
         },
         {
-          "color" : "rgb(136,136,136)",
+          "color" : "rgb(36,31,49)",
           "size" : 50.0
         },
         {
-          "color" : "rgb(255,255,255)",
+          "color" : "rgb(61,56,70)",
           "size" : 25.0
         }
       ],
@@ -335,13 +336,27 @@
       "background_color" : "rgb(45,45,45)",
       "background_color_end" : "rgb(77,77,77)",
       "background_gradient_direction" : "horizontal",
-      "font_color" : "rgb(255,255,255)",
+      "font_color" : "rgb(0,0,0)",
+      "use_custom_font_color" : false,
       "border_enabled" : false,
       "border_width" : 1,
       "border_mode" : "solid",
-      "border_color" : "#ffffff",
+      "border_color" : "rgb(255,255,255)",
       "border_gradient_direction" : "horizontal",
-      "border_stops" : [],
+      "border_stops" : [
+        {
+          "color" : "rgb(255,255,255)",
+          "size" : 25.0
+        },
+        {
+          "color" : "rgb(136,136,136)",
+          "size" : 50.0
+        },
+        {
+          "color" : "rgb(255,255,255)",
+          "size" : 25.0
+        }
+      ],
       "visible" : true,
       "layer" : "bottom",
       "float_x" : 1720,
@@ -359,7 +374,7 @@
           "type" : "clock",
           "config" : {
             "show_seconds" : false,
-            "font_desc" : "Adwaita Sans Bold 72",
+            "font_desc" : "Tektur 72",
             "show_date" : true,
             "stacked" : true,
             "date_format" : "long"
@@ -394,12 +409,13 @@
       "margin" : 0,
       "use_exclusive_zone" : false,
       "opacity" : 0.90000000000000002,
-      "use_custom_appearance" : true,
+      "use_custom_appearance" : false,
       "background_mode" : "gradient",
       "background_color" : "rgb(38,38,38)",
       "background_color_end" : "rgb(0,0,0)",
       "background_gradient_direction" : "vertical",
       "font_color" : "rgb(154,153,150)",
+      "use_custom_font_color" : false,
       "border_enabled" : true,
       "border_width" : 1,
       "border_mode" : "gradient",
