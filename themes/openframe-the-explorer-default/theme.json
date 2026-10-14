@@ -4,12 +4,12 @@
   "gtk_theme" : "OpenFrame-Dark",
   "icon_theme" : "Colloid-Dark",
   "cursor_theme" : "Ubuntosh-Icons",
-  "labwc_theme" : "Aritim-Dark",
+  "labwc_theme" : "Boron-dark",
   "cursor_size" : 24,
   "font" : "Manrope 9",
   "wallpaper" : "backgrounds/2K_20261009232430.jpg",
   "wallpaper_display" : "center",
   "background_color" : "rgb(11,11,42)",
-  "version" : "1.1.1",
+  "version" : "1.1.2",
   "bundle_format" : 2
 }
