@@ -1,0 +1,586 @@
+/*
+ * OpenFrame-Light — GTK4 theme (#434)
+ *
+ * The daylight counterpart of OpenFrame-Dark: a clean near-white surface with
+ * the SAME brand aurora accents, re-tuned for WCAG-AA contrast on light.
+ * Primary accent = cyan (#0FA9BE); orange (#E8702A) is the "active/attention"
+ * pole and the panel aurora border (#432).
+ *
+ * Approach mirrors OpenFrame-Dark: import GTK's OWN built-in Default (Adwaita)
+ * light stylesheet as the widget base, then override the named colors with the
+ * OpenFrame light palette. Not a copy of any third-party theme; our colors are
+ * an authored inversion of the dark palette. (@import precedes @define-color.)
+ */
+
+@import url("resource:///org/gtk/libgtk/theme/Default/Default-light.css");
+
+/* ---- Classic GTK named colors (used by GTK4 Default widget CSS) ---------- */
+@define-color theme_bg_color            #f5f6f9;
+@define-color theme_base_color          #ffffff;
+@define-color theme_fg_color            #0c0d10;
+@define-color theme_text_color          #0c0d10;
+@define-color theme_selected_bg_color   #5c5f68;
+@define-color theme_selected_fg_color   #ffffff;
+
+@define-color insensitive_bg_color      #eef0f4;
+@define-color insensitive_fg_color      #9b9ea6;
+@define-color insensitive_base_color    #f5f6f9;
+
+@define-color theme_unfocused_bg_color      #f5f6f9;
+@define-color theme_unfocused_base_color    #ffffff;
+@define-color theme_unfocused_fg_color      #5c5f68;
+@define-color theme_unfocused_text_color    #0c0d10;
+@define-color theme_unfocused_selected_bg_color #4bbccb;
+@define-color theme_unfocused_selected_fg_color #ffffff;
+@define-color unfocused_insensitive_color   #b4b7bf;
+
+@define-color borders            rgba(10, 12, 16, 0.12);
+@define-color unfocused_borders  rgba(10, 12, 16, 0.08);
+
+@define-color warning_color  #946600;
+@define-color error_color    #c8273d;
+@define-color success_color  #1c8e63;
+@define-color accent_color   #3a3d44;
+
+@define-color content_view_bg  #ffffff;
+@define-color text_view_bg     #ffffff;
+
+/* ---- libadwaita-style named colors (apps that reference the modern set) --- */
+@define-color window_bg_color    #f5f6f9;
+@define-color window_fg_color    #0c0d10;
+@define-color view_bg_color      #ffffff;
+@define-color view_fg_color      #0c0d10;
+@define-color headerbar_bg_color #fbfcfe;
+@define-color headerbar_fg_color #0c0d10;
+@define-color headerbar_border_color rgba(10, 12, 16, 0.12);
+@define-color headerbar_backdrop_color #f5f6f9;
+@define-color headerbar_shade_color rgba(10, 12, 16, 0.10);
+@define-color sidebar_bg_color   #eceef3;
+@define-color sidebar_fg_color   #0c0d10;
+@define-color sidebar_backdrop_color #eceef3;
+@define-color sidebar_border_color rgba(10, 12, 16, 0.08);
+@define-color sidebar_shade_color rgba(10, 12, 16, 0.07);
+@define-color card_bg_color      #ffffff;
+@define-color card_fg_color      #0c0d10;
+@define-color card_shade_color   rgba(10, 12, 16, 0.08);
+@define-color dialog_bg_color    #ffffff;
+@define-color dialog_fg_color    #0c0d10;
+@define-color popover_bg_color   #ffffff;
+@define-color popover_fg_color   #0c0d10;
+@define-color popover_shade_color rgba(10, 12, 16, 0.10);
+@define-color thumbnail_bg_color #ffffff;
+@define-color thumbnail_fg_color #0c0d10;
+@define-color shade_color        rgba(10, 12, 16, 0.10);
+@define-color scrollbar_outline_color rgba(255, 255, 255, 0.5);
+
+@define-color accent_bg_color    #5c5f68;
+@define-color accent_fg_color    #ffffff;
+
+@define-color destructive_bg_color #e5455c;
+@define-color destructive_fg_color #ffffff;
+@define-color destructive_color    #c8273d;
+
+@define-color success_bg_color   #2fb37e;
+@define-color success_fg_color   #ffffff;
+
+@define-color warning_bg_color   #f5b32e;
+@define-color warning_fg_color   #3a2a00;
+
+@define-color error_bg_color     #e5455c;
+@define-color error_fg_color     #ffffff;
+
+/* OpenFrame brand poles exposed for app-level CSS that wants them. */
+@define-color openframe_accent_cyan   #0fa9be;
+@define-color openframe_accent_orange #e8702a;
+@define-color openframe_accent_purple #6a5fd4;
+
+/* ===================== OpenFrame signature (#434) =====================
+ * Appended after the overrides so these rules win over the imported base.
+ * Brand language from the website, re-tuned for light: a clean CTA that
+ * reveals the aurora on hover, aurora progress bars and an aurora spinner.
+ */
+
+/* Primary CTA (.suggested-action): light pill at rest → brand aurora on hover. */
+button.suggested-action {
+  color: #0c0d10;
+  border: 1px solid rgba(10, 12, 16, 0.14);
+  border-radius: 10px;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #ffffff, #eef0f4);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.85), 0 1px 2px rgba(10, 12, 16, 0.10);
+  transition: background-image 300ms ease, box-shadow 220ms ease, color 220ms ease;
+}
+button.suggested-action:hover {
+  color: #0a0a0c;
+  border-color: rgba(10, 12, 16, 0.18);
+  background-image: linear-gradient(100deg, #ffddc9 0%, #ffebd8 24%, #f4f5f8 50%, #dbf1f7 76%, #d9e9fb 100%);
+  box-shadow: 0 2px 10px rgba(255, 138, 61, 0.16), 0 2px 10px rgba(25, 188, 212, 0.14), inset 0 1px rgba(255, 255, 255, 0.7);
+}
+button.suggested-action:active,
+button.suggested-action:checked {
+  color: #0a0a0c;
+  background-image: linear-gradient(to bottom, #e9ebef, #dadde3);
+  box-shadow: inset 0 1px 2px rgba(10, 12, 16, 0.15);
+}
+button.suggested-action:disabled {
+  color: #9b9ea6;
+  background-image: image(#eef0f4);
+  border-color: rgba(10, 12, 16, 0.08);
+  box-shadow: none;
+}
+
+/* Progress bars: the brand aurora spectrum. */
+progressbar > trough > progress {
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+  background-image: linear-gradient(to right, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+  box-shadow: 0 0 6px rgba(25, 188, 212, 0.28);
+}
+progressbar.vertical > trough > progress {
+  background-image: linear-gradient(to top, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+
+/* Spinner: a rotating aurora ring. Drawn as a background with background-size
+ * contain so it stays a PERFECT CIRCLE even when the widget box is not square
+ * (-gtk-icon-source stretches to the box; a contained background does not).
+ * The base `spinner:checked { animation: spin }` rotates the whole node. */
+spinner {
+  -gtk-icon-source: none;
+  background-image: url("assets/openframe-spinner.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+/* ---- Controls recolored to brand cyan (base hardcodes Adwaita blue) ------- */
+/* Check & radio: clean, soft-cornered, flat brand cyan when set (image 28). */
+check, radio {
+  background-image: none;
+  background-color: #ffffff;
+  border: 1px solid rgba(10, 12, 16, 0.28);
+  box-shadow: none;
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+check { border-radius: 6px; }
+radio { border-radius: 100%; }
+check:hover, radio:hover {
+  background-color: #f3f4f7;
+  border-color: rgba(10, 12, 16, 0.40);
+}
+check:checked, radio:checked,
+check:indeterminate, radio:indeterminate {
+  background-image: none;
+  background-color: #2b2f37;
+  border-color: #2b2f37;
+  color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(10, 12, 16, 0.10);
+}
+check:checked:hover, radio:checked:hover,
+check:indeterminate:hover, radio:indeterminate:hover {
+  background-color: #20242b;
+  border-color: #20242b;
+}
+check:checked:active, radio:checked:active {
+  background-color: #15181d;
+  border-color: #15181d;
+}
+
+/* Scale: aurora value fill + clean knob */
+scale.horizontal > trough > highlight {
+  background-color: transparent;
+  border-color: transparent;
+  background-image: linear-gradient(to right, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+scale.vertical > trough > highlight {
+  background-color: transparent;
+  border-color: transparent;
+  background-image: linear-gradient(to top, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+scale > trough > slider {
+  background-image: none;
+  background-color: #ffffff;
+  border: 1px solid rgba(10, 12, 16, 0.28);
+  box-shadow: 0 1px 3px rgba(10, 12, 16, 0.22);
+}
+scale:hover > trough > slider { background-color: #ffffff; border-color: rgba(10, 12, 16, 0.38); }
+scale > trough > slider:active { background-color: #ffffff; border-color: rgba(10, 12, 16, 0.48); }
+
+/* Switch */
+switch:checked {
+  background-color: #2b2f37;
+  border-color: #20242b;
+  color: #ffffff;
+}
+switch:checked > slider { border-color: #20242b; }
+
+/* Links */
+*:link, button.link > label { color: #3a3d44; }
+
+/* ---- Raised buttons & toggles: OpenFrame pill, aurora on hover ----------- */
+button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+togglebutton:not(.flat):not(.osd) {
+  border: 1px solid rgba(10, 12, 16, 0.14);
+  border-radius: 9px;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #ffffff, #eef0f4);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.85);
+  transition: background-image 260ms ease, box-shadow 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+togglebutton:not(.flat):not(.osd):hover {
+  color: #0a0a0c;
+  border-color: rgba(10, 12, 16, 0.18);
+  background-image: linear-gradient(100deg, #ffddc9 0%, #ffebd8 24%, #f4f5f8 50%, #dbf1f7 76%, #d9e9fb 100%);
+  box-shadow: 0 1px 8px rgba(255, 138, 61, 0.14), 0 1px 8px rgba(25, 188, 212, 0.12), inset 0 1px rgba(255, 255, 255, 0.7);
+}
+button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):active,
+togglebutton:not(.flat):not(.osd):checked,
+togglebutton:not(.flat):not(.osd):active {
+  color: #0c0d10;
+  border-color: rgba(10, 12, 16, 0.22);
+  background-image: linear-gradient(to bottom, #e3e5ea, #d2d5db);
+  box-shadow: inset 0 1px 2px rgba(10, 12, 16, 0.12);
+}
+button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):disabled,
+togglebutton:not(.flat):not(.osd):disabled {
+  color: #9b9ea6;
+  background-image: image(#eef0f4);
+  border-color: rgba(10, 12, 16, 0.08);
+  box-shadow: none;
+}
+
+/* True linked button groups stay joined. */
+.linked > button, .linked > togglebutton {
+  border-radius: 0;
+  background-image: linear-gradient(to bottom, #ffffff, #eef0f4);
+  box-shadow: none;
+}
+.linked > button:hover, .linked > togglebutton:hover {
+  color: #0c0d10;
+  background-image: linear-gradient(to bottom, #f3f5f8, #e7eaef);
+}
+
+/* Text inputs follow the card language: transparent field, subtle border, cyan
+ * focus (base paints them solid gray #2d2d2d). */
+entry,
+spinbutton:not(.vertical),
+spinbutton.vertical > text {
+  background-color: transparent;
+  background-image: none;
+  border-color: rgba(10, 12, 16, 0.16);
+  border-radius: 8px;
+  box-shadow: none;
+}
+entry:focus-within,
+spinbutton:not(.vertical):focus-within,
+spinbutton.vertical > text:focus-within {
+  border-color: rgba(10, 12, 16, 0.40);
+  box-shadow: 0 0 0 2px rgba(10, 12, 16, 0.08);
+}
+entry:disabled,
+spinbutton:disabled:not(.vertical) {
+  background-color: rgba(10, 12, 16, 0.03);
+  border-color: rgba(10, 12, 16, 0.10);
+}
+
+/* Combo boxes & dropdowns: outlined like inputs. */
+dropdown > button,
+combobox > box > button.combo {
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid rgba(10, 12, 16, 0.16);
+  border-radius: 8px;
+  box-shadow: none;
+}
+dropdown > button:hover,
+combobox > box > button.combo:hover {
+  background-color: rgba(10, 12, 16, 0.05);
+  background-image: none;
+}
+
+/* Inner buttons of inputs (spin +/-, entry icons) stay flat and blend in. */
+spinbutton button, entry > button {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border-radius: 6px;
+  color: #3a3d44;
+}
+spinbutton button:hover, entry > button:hover {
+  background-color: rgba(10, 12, 16, 0.07);
+  background-image: none;
+  color: #0c0d10;
+}
+
+/* Header bar / titlebar / toolbar / window controls stay FLAT (never light
+ * pills). Selectors repeat the :not() chain + a context element so they outrank
+ * the content-button rule above. */
+headerbar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+.titlebar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+windowcontrols button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+.toolbar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+headerbar togglebutton:not(.flat):not(.osd),
+.toolbar togglebutton:not(.flat):not(.osd) {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: inherit;
+}
+headerbar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+.titlebar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+windowcontrols button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+.toolbar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+headerbar togglebutton:not(.flat):not(.osd):hover,
+.toolbar togglebutton:not(.flat):not(.osd):hover {
+  background-color: rgba(10, 12, 16, 0.07);
+  background-image: none;
+  color: inherit;
+}
+headerbar togglebutton:not(.flat):not(.osd):checked,
+.toolbar togglebutton:not(.flat):not(.osd):checked {
+  background-color: rgba(10, 12, 16, 0.12);
+  background-image: none;
+  box-shadow: none;
+  color: inherit;
+}
+
+/* Level bars & entry/spinbutton progress: brand aurora. */
+levelbar > trough > block:not(.empty),
+levelbar > trough > block.high,
+levelbar > trough > block.full {
+  border-color: transparent;
+  background-image: linear-gradient(to right, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+levelbar.vertical > trough > block:not(.empty),
+levelbar.vertical > trough > block.high,
+levelbar.vertical > trough > block.full {
+  background-image: linear-gradient(to top, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+entry > progress > trough > progress,
+spinbutton:not(.vertical) > progress > trough > progress,
+spinbutton.vertical > text > progress > trough > progress {
+  border: none;
+  background-image: linear-gradient(to right, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+
+/* Folder-style tabs: the active tab is an outlined tab connected to the content
+ * panel (site card language, image 47) — the strip line "opens" under it. */
+notebook > header > tabs > tab {
+  margin: 0;
+  min-height: 0;
+  padding: 2px 14px;
+  border: 1px solid transparent;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+notebook > header > tabs > tab:hover {
+  box-shadow: none;
+  background-color: rgba(10, 12, 16, 0.05);
+}
+notebook > header > tabs > tab:checked {
+  color: #0c0d10;
+  background-image: none;
+  background-color: rgba(10, 12, 16, 0.04);
+  border-color: rgba(10, 12, 16, 0.12);
+  box-shadow: none;
+}
+notebook > header > tabs > tab:checked:hover {
+  background-color: rgba(10, 12, 16, 0.07);
+}
+notebook > header.top    { border-bottom: 1px solid rgba(10, 12, 16, 0.12); }
+notebook > header.bottom { border-top: 1px solid rgba(10, 12, 16, 0.12); }
+notebook > header.left   { border-right: 1px solid rgba(10, 12, 16, 0.12); }
+notebook > header.right  { border-left: 1px solid rgba(10, 12, 16, 0.12); }
+notebook > header.top > tabs > tab    { border-radius: 9px 9px 0 0; }
+notebook > header.top > tabs > tab:checked    { box-shadow: none; border-bottom-color: transparent; margin-bottom: -1px; }
+notebook > header.bottom > tabs > tab { border-radius: 0 0 9px 9px; }
+notebook > header.bottom > tabs > tab:checked { box-shadow: none; border-top-color: transparent; margin-top: -1px; }
+notebook > header.left > tabs > tab   { border-radius: 9px 0 0 9px; }
+notebook > header.left > tabs > tab:checked   { box-shadow: none; border-right-color: transparent; margin-right: -1px; }
+notebook > header.right > tabs > tab  { border-radius: 0 9px 9px 0; }
+notebook > header.right > tabs > tab:checked  { box-shadow: none; border-left-color: transparent; margin-left: -1px; }
+
+stackswitcher > button:not(.flat) { border-radius: 999px; }
+stackswitcher > button:not(.flat):checked {
+  color: #0c0d10;
+  border-color: transparent;
+  background-image: none;
+  background-color: #ffffff;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.9), inset 0 0 0 1px rgba(10, 12, 16, 0.06), 0 2px 8px rgba(10, 12, 16, 0.14);
+}
+
+/* App window backdrop: subtle daylight gradient (site card language, image 29). */
+window.background,
+window.csd,
+window.solid-csd {
+  /* Translucent glass backdrop (#448): gradient carries alpha and the opaque base
+   * window_bg_color is cleared, so the window reads as frosted glass. labwc shows
+   * translucency (no blur); blur-capable compositors turn it into true acrylic (#446). */
+  background-color: transparent;
+  background-image: linear-gradient(150deg, rgba(253, 253, 255, 0.94) 0%, rgba(245, 246, 249, 0.94) 36%, rgba(237, 239, 243, 0.94) 100%);
+}
+headerbar,
+headerbar.default-decoration {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+/* Container surfaces follow the window gradient (transparent) + card outline. */
+.view, iconview, iconview.view,
+textview, textview > text,
+treeview.view, columnview.view, columnview, columnview > listview,
+listview, list, gridview,
+notebook, notebook > stack,
+scrolledwindow, scrolledwindow > viewport {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Row / cell / view selection uses the brand cyan (base hardcodes Adwaita blue). */
+.view:selected, .view:selected:focus,
+textview > text:selected, textview > text:selected:focus,
+iconview:selected, iconview:selected:focus,
+flowbox > flowboxchild:selected, gridview > child:selected,
+columnview.view:selected, columnview.view:selected:focus,
+treeview.view:selected, treeview.view:selected:focus,
+row:selected,
+calendar > grid > label.day-number:selected {
+  background-color: rgba(10, 12, 16, 0.12);
+  color: #0c0d10;
+}
+row.activatable:selected:hover,
+row.activatable:selected.has-open-popup {
+  background-color: rgba(10, 12, 16, 0.16);
+}
+frame > border {
+  border-color: rgba(10, 12, 16, 0.10);
+  border-radius: 12px;
+}
+scrolledwindow.frame,
+scrolledwindow.view,
+frame.view,
+.card {
+  border: 1px solid rgba(10, 12, 16, 0.10);
+  border-radius: 12px;
+  background-color: transparent;
+}
+notebook > header,
+notebook > header > tabs {
+  border-color: rgba(10, 12, 16, 0.10);
+  background-color: transparent;
+  background-image: none;
+}
+notebook > stack:not(:only-child) {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Focus rings use the brand cyan instead of Adwaita blue. */
+*:focus-visible {
+  outline-color: rgba(10, 12, 16, 0.40);
+}
+
+/* Toolbars & search bars follow the window backdrop (base paints them #353535). */
+.toolbar,
+searchbar > revealer > box {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Keep surfaces on-theme when the window is unfocused (base repaints them gray
+ * in the :backdrop state, e.g. listview/list #303030, headerbar #353535). */
+.view:backdrop, listview:backdrop, list:backdrop,
+treeview.view:backdrop, columnview.view:backdrop, columnview:backdrop,
+textview:backdrop, textview > text:backdrop,
+scrolledwindow:backdrop, notebook:backdrop, notebook > stack:backdrop {
+  background-color: transparent;
+  background-image: none;
+}
+headerbar:backdrop,
+.titlebar:backdrop:not(headerbar) {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Popovers: elevated white card surface + subtle border (base hardcodes gray). */
+popover.background > contents {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(10, 12, 16, 0.10);
+  box-shadow: 0 2px 16px rgba(10, 12, 16, 0.18);
+}
+popover.background > arrow {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(10, 12, 16, 0.10);
+}
+popover.background > contents separator {
+  background-color: rgba(10, 12, 16, 0.08);
+}
+popover.menu.background > contents {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(10, 12, 16, 0.10);
+}
+popover.menu > arrow {
+  background-color: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+}
+popover.menu modelbutton:selected {
+  background-color: rgba(10, 12, 16, 0.08);
+  color: #0c0d10;
+}
+
+/* Emoji picker / completion hover + menubar selection use brand cyan. */
+popover.emoji-picker emoji:focus,
+popover.emoji-picker emoji:hover,
+emoji-completion-row:focus,
+emoji-completion-row:hover {
+  background-color: rgba(10, 12, 16, 0.10);
+  color: #0c0d10;
+}
+menubar > item:selected {
+  box-shadow: inset 0 -3px rgba(10, 12, 16, 0.5);
+  color: #0c0d10;
+}
+
+/* Sidebar surface follows the window gradient; selection = neutral pill. */
+.sidebar {
+  background-color: transparent;
+}
+stacksidebar row:selected,
+.navigation-sidebar > row:selected {
+  background-color: rgba(10, 12, 16, 0.08);
+  color: #0c0d10;
+  border-radius: 8px;
+}
+stacksidebar row:selected:hover,
+.navigation-sidebar > row:selected:hover {
+  background-color: rgba(10, 12, 16, 0.12);
+  color: #0c0d10;
+}
+
+/* List / tree / column headers stay FLAT (never light pills). */
+columnview header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+treeview.view header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+treeview header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+.view header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular) {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 -1px rgba(10, 12, 16, 0.08);
+  color: inherit;
+}
+columnview header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+treeview.view header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+treeview header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+.view header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover {
+  background-color: rgba(10, 12, 16, 0.06);
+  background-image: none;
+}

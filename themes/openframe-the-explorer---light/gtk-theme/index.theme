@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=OpenFrame-Light
+Comment=OpenFrame official light theme — clean daylight surface with the brand aurora accent
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=OpenFrame-Light
+MetacityTheme=OpenFrame-Light
+IconTheme=Papirus-Light
+ButtonLayout=:minimize,maximize,close

@@ -1,0 +1,614 @@
+/*
+ * OpenFrame-Dark — GTK4 theme (#434)
+ *
+ * Identity: deep-space black (#070709) with the OpenFrame brand aurora.
+ * Primary accent = cyan (#49D4E6, "info"); orange (#FF8A3D) is reserved for
+ * the "active/attention" language and the panel aurora border (#432).
+ *
+ * Approach: we import GTK's OWN built-in Default (Adwaita) dark stylesheet as
+ * the widget base — NOT a third-party theme — and then override the named
+ * colors with the OpenFrame palette. The last @define-color wins and every
+ * widget rule that references a token recolors. This keeps the theme tiny,
+ * modern and fully ours. (@import must precede the @define-color block.)
+ */
+
+@import url("resource:///org/gtk/libgtk/theme/Default/Default-dark.css");
+
+/* ---- Classic GTK named colors (used by GTK4 Default widget CSS) ---------- */
+@define-color theme_bg_color            #070709;
+@define-color theme_base_color          #0f1013;
+@define-color theme_fg_color            #f4f5f7;
+@define-color theme_text_color          #f4f5f7;
+@define-color theme_selected_bg_color   #4a4d55;
+@define-color theme_selected_fg_color   #ffffff;
+
+@define-color insensitive_bg_color      #0b0b0d;
+@define-color insensitive_fg_color      #5c5f68;
+@define-color insensitive_base_color    #0f1013;
+
+@define-color theme_unfocused_bg_color      #070709;
+@define-color theme_unfocused_base_color    #0f1013;
+@define-color theme_unfocused_fg_color      #8a8c94;
+@define-color theme_unfocused_text_color    #f4f5f7;
+@define-color theme_unfocused_selected_bg_color #3aa9b8;
+@define-color theme_unfocused_selected_fg_color #05222a;
+@define-color unfocused_insensitive_color   #4a4c54;
+
+@define-color borders            rgba(255, 255, 255, 0.10);
+@define-color unfocused_borders  rgba(255, 255, 255, 0.07);
+
+@define-color warning_color  #ffc24d;
+@define-color error_color    #ff5c72;
+@define-color success_color  #5bd6a8;
+@define-color accent_color   #c9ced6;
+
+@define-color content_view_bg  #070709;
+@define-color text_view_bg     #0b0b0d;
+
+/* ---- libadwaita-style named colors (apps that reference the modern set) --- */
+@define-color window_bg_color    #070709;
+@define-color window_fg_color    #f4f5f7;
+@define-color view_bg_color      #0b0b0d;
+@define-color view_fg_color      #f4f5f7;
+@define-color headerbar_bg_color #070709;
+@define-color headerbar_fg_color #f4f5f7;
+@define-color headerbar_border_color rgba(255, 255, 255, 0.10);
+@define-color headerbar_backdrop_color #070709;
+@define-color headerbar_shade_color rgba(0, 0, 0, 0.36);
+@define-color sidebar_bg_color   #0a0a0c;
+@define-color sidebar_fg_color   #f4f5f7;
+@define-color sidebar_backdrop_color #0a0a0c;
+@define-color sidebar_border_color rgba(255, 255, 255, 0.08);
+@define-color sidebar_shade_color rgba(0, 0, 0, 0.25);
+@define-color card_bg_color      #0f1013;
+@define-color card_fg_color      #f4f5f7;
+@define-color card_shade_color   rgba(0, 0, 0, 0.36);
+@define-color dialog_bg_color    #0f1013;
+@define-color dialog_fg_color    #f4f5f7;
+@define-color popover_bg_color   #16171b;
+@define-color popover_fg_color   #f4f5f7;
+@define-color popover_shade_color rgba(0, 0, 0, 0.25);
+@define-color thumbnail_bg_color #16171b;
+@define-color thumbnail_fg_color #f4f5f7;
+@define-color shade_color        rgba(0, 0, 0, 0.32);
+@define-color scrollbar_outline_color rgba(0, 0, 0, 0.5);
+
+@define-color accent_bg_color    #4a4d55;
+@define-color accent_fg_color    #ffffff;
+
+@define-color destructive_bg_color #ff5c72;
+@define-color destructive_fg_color #2a0a0f;
+@define-color destructive_color    #ff8a99;
+
+@define-color success_bg_color   #5bd6a8;
+@define-color success_fg_color   #04231a;
+
+@define-color warning_bg_color   #ffc24d;
+@define-color warning_fg_color   #241a00;
+
+@define-color error_bg_color     #ff5c72;
+@define-color error_fg_color     #2a0a0f;
+
+/* OpenFrame brand poles exposed for app-level CSS that wants them. */
+@define-color openframe_accent_cyan   #49d4e6;
+@define-color openframe_accent_orange #ff8a3d;
+@define-color openframe_accent_purple #a98cff;
+
+/* ===================== OpenFrame signature (#434) =====================
+ * Appended after the overrides so these rules win over the imported base.
+ * Brand language from the website: dark CTA that reveals the aurora on hover,
+ * aurora progress bars and a rotating aurora spinner.
+ */
+
+/* Primary CTA (.suggested-action): light pill with a faint aurora tint at rest,
+ * subtle aurora on hover (site language, images 19/21). */
+button.suggested-action {
+  color: #15161a;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+  background-color: transparent;
+  background-image: linear-gradient(100deg, #fff2e9 0%, #fdf6ef 32%, #f6f7fb 55%, #eef8fb 82%, #ecf3fe 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), inset 0 1px rgba(255, 255, 255, 0.70);
+  transition: background-image 300ms ease, box-shadow 220ms ease, color 220ms ease, border-color 200ms ease;
+}
+button.suggested-action:hover {
+  color: #10110f;
+  border-color: rgba(0, 0, 0, 0.22);
+  background-image: linear-gradient(100deg, #ffd8c2 0%, #ffe7cf 24%, #f3f4f7 50%, #d2eff6 76%, #cfe3fb 100%);
+  box-shadow: 0 2px 10px rgba(255, 138, 61, 0.18), 0 2px 10px rgba(73, 212, 230, 0.16), inset 0 1px rgba(255, 255, 255, 0.60);
+}
+button.suggested-action:active,
+button.suggested-action:checked {
+  color: #10110f;
+  background-image: linear-gradient(to bottom, #e9ebef, #dadde3);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+button.suggested-action:disabled {
+  color: #a7abb3;
+  background-image: linear-gradient(to bottom, #e7e9ed, #e0e2e7);
+  border-color: rgba(0, 0, 0, 0.10);
+  box-shadow: none;
+}
+
+/* Progress bars: the brand aurora spectrum. */
+progressbar > trough > progress {
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+  background-image: linear-gradient(to right, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+  box-shadow: 0 0 6px rgba(25, 188, 212, 0.35);
+}
+progressbar.vertical > trough > progress {
+  background-image: linear-gradient(to top, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+
+/* Spinner: a rotating aurora ring. Drawn as a background with background-size
+ * contain so it stays a PERFECT CIRCLE even when the widget box is not square
+ * (-gtk-icon-source stretches to the box; a contained background does not).
+ * The base `spinner:checked { animation: spin }` rotates the whole node. */
+spinner {
+  -gtk-icon-source: none;
+  background-image: url("assets/openframe-spinner.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+/* ---- Controls recolored to brand cyan (base hardcodes Adwaita blue) ------- */
+/* Check & radio: clean, soft-cornered, flat brand cyan when set (image 28). */
+check, radio {
+  background-image: none;
+  background-color: #16171b;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+}
+check { border-radius: 6px; }
+radio { border-radius: 100%; }
+check:hover, radio:hover {
+  background-color: #1d1e23;
+  border-color: rgba(255, 255, 255, 0.32);
+}
+check:checked, radio:checked,
+check:indeterminate, radio:indeterminate {
+  background-image: none;
+  background-color: #e6e8ec;
+  border-color: #e6e8ec;
+  color: #0e1013;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.10);
+}
+check:checked:hover, radio:checked:hover,
+check:indeterminate:hover, radio:indeterminate:hover {
+  background-color: #f2f3f5;
+  border-color: #f2f3f5;
+}
+check:checked:active, radio:checked:active {
+  background-color: #cfd2d8;
+  border-color: #cfd2d8;
+}
+
+/* Scale: aurora value fill + clean white knob */
+scale.horizontal > trough > highlight {
+  background-color: transparent;
+  border-color: transparent;
+  background-image: linear-gradient(to right, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+scale.vertical > trough > highlight {
+  background-color: transparent;
+  border-color: transparent;
+  background-image: linear-gradient(to top, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+scale > trough > slider {
+  background-image: none;
+  background-color: #f4f5f7;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+}
+scale:hover > trough > slider { background-color: #ffffff; }
+scale > trough > slider:active { background-color: #ffffff; border-color: rgba(0, 0, 0, 0.45); }
+
+/* Switch */
+switch:checked {
+  background-color: #e6e8ec;
+  border-color: #c8ccd2;
+  color: #0e1013;
+}
+switch:checked > slider { border-color: #c8ccd2; }
+
+/* Links */
+*:link, button.link > label { color: #c9ced6; }
+
+/* ---- Raised buttons & toggles: light pill with a subtle white gradient
+ * (site language, image 19), aurora reveal on hover. ----------------------- */
+button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+togglebutton:not(.flat):not(.osd) {
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 9px;
+  background-color: transparent;
+  background-image: linear-gradient(to bottom, #fcfcfd, #e9eaee);
+  color: #15161a;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35), inset 0 1px rgba(255, 255, 255, 0.65);
+  transition: background-image 260ms ease, box-shadow 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+togglebutton:not(.flat):not(.osd):hover {
+  color: #10110f;
+  border-color: rgba(0, 0, 0, 0.20);
+  background-image: linear-gradient(100deg, #ffd8c2 0%, #ffe7cf 24%, #f3f4f7 50%, #d2eff6 76%, #cfe3fb 100%);
+  box-shadow: 0 1px 8px rgba(255, 138, 61, 0.12), 0 1px 8px rgba(73, 212, 230, 0.12), inset 0 1px rgba(255, 255, 255, 0.60);
+}
+button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):active,
+togglebutton:not(.flat):not(.osd):active {
+  color: #0a0a0c;
+  background-image: linear-gradient(to bottom, #e3e5ea, #d2d5db);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.18);
+}
+togglebutton:not(.flat):not(.osd):checked {
+  color: #15161a;
+  border-color: rgba(0, 0, 0, 0.22);
+  background-image: linear-gradient(to bottom, #e3e5ea, #d2d5db);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):disabled,
+togglebutton:not(.flat):not(.osd):disabled {
+  color: #a7abb3;
+  background-image: linear-gradient(to bottom, #e7e9ed, #e0e2e7);
+  border-color: rgba(0, 0, 0, 0.10);
+  box-shadow: none;
+}
+
+/* True linked button groups stay joined & dark. */
+.linked > button, .linked > togglebutton {
+  border-radius: 0;
+  color: #f4f5f7;
+  background-image: linear-gradient(to bottom, #1a1b1f, #141519);
+  box-shadow: none;
+}
+.linked > button:hover, .linked > togglebutton:hover {
+  color: #f4f5f7;
+  background-image: linear-gradient(to bottom, #232428, #191a1e);
+}
+
+/* Text inputs follow the card language: transparent field, subtle border, cyan
+ * focus (base paints them solid gray #2d2d2d). */
+entry,
+spinbutton:not(.vertical),
+spinbutton.vertical > text {
+  background-color: transparent;
+  background-image: none;
+  border-color: rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  box-shadow: none;
+}
+entry:focus-within,
+spinbutton:not(.vertical):focus-within,
+spinbutton.vertical > text:focus-within {
+  border-color: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.10);
+}
+entry:disabled,
+spinbutton:disabled:not(.vertical) {
+  background-color: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Combo boxes & dropdowns: outlined like inputs. */
+dropdown > button,
+combobox > box > button.combo {
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  box-shadow: none;
+}
+dropdown > button:hover,
+combobox > box > button.combo:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  background-image: none;
+}
+
+/* Inner buttons of inputs (spin +/-, entry icons) stay flat and blend in. */
+spinbutton button, entry > button {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  border-radius: 6px;
+  color: #c7c9d0;
+}
+spinbutton button:hover, entry > button:hover {
+  background-color: rgba(255, 255, 255, 0.07);
+  background-image: none;
+  color: #f4f5f7;
+}
+
+/* Header bar / titlebar / toolbar / window controls stay FLAT (never light
+ * pills). Selectors repeat the :not() chain + a context element so they outrank
+ * the content-button rule above. */
+headerbar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+.titlebar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+windowcontrols button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+.toolbar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+headerbar togglebutton:not(.flat):not(.osd),
+.toolbar togglebutton:not(.flat):not(.osd) {
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+  color: inherit;
+}
+headerbar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+.titlebar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+windowcontrols button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+.toolbar button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+headerbar togglebutton:not(.flat):not(.osd):hover,
+.toolbar togglebutton:not(.flat):not(.osd):hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  background-image: none;
+  color: inherit;
+}
+headerbar togglebutton:not(.flat):not(.osd):checked,
+.toolbar togglebutton:not(.flat):not(.osd):checked {
+  background-color: rgba(255, 255, 255, 0.14);
+  background-image: none;
+  box-shadow: none;
+  color: inherit;
+}
+
+/* Level bars & entry/spinbutton progress: brand aurora. */
+levelbar > trough > block:not(.empty),
+levelbar > trough > block.high,
+levelbar > trough > block.full {
+  border-color: transparent;
+  background-image: linear-gradient(to right, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+levelbar.vertical > trough > block:not(.empty),
+levelbar.vertical > trough > block.high,
+levelbar.vertical > trough > block.full {
+  background-image: linear-gradient(to top, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+entry > progress > trough > progress,
+spinbutton:not(.vertical) > progress > trough > progress,
+spinbutton.vertical > text > progress > trough > progress {
+  border: none;
+  background-image: linear-gradient(to right, #ff6a3d, #f5a623, #35c48d, #19bcd4, #5a7df0, #9270f0);
+}
+
+/* Notebook tabs & stack switcher follow the button language (light pill when
+ * selected) with a brand-cyan indicator. */
+/* Folder-style tabs: the active tab is an outlined tab connected to the content
+ * panel (site card language, image 47) — the strip line "opens" under it. */
+notebook > header > tabs > tab {
+  margin: 0;
+  min-height: 0;
+  padding: 2px 14px;
+  border: 1px solid transparent;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+notebook > header > tabs > tab:hover {
+  box-shadow: none;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+notebook > header > tabs > tab:checked {
+  color: #ffffff;
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: none;
+}
+notebook > header > tabs > tab:checked:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* The strip line that the active tab connects to, per tab position. */
+notebook > header.top    { border-bottom: 1px solid rgba(255, 255, 255, 0.10); }
+notebook > header.bottom { border-top: 1px solid rgba(255, 255, 255, 0.10); }
+notebook > header.left   { border-right: 1px solid rgba(255, 255, 255, 0.10); }
+notebook > header.right  { border-left: 1px solid rgba(255, 255, 255, 0.10); }
+
+notebook > header.top > tabs > tab    { border-radius: 9px 9px 0 0; }
+notebook > header.top > tabs > tab:checked    { box-shadow: none; border-bottom-color: transparent; margin-bottom: -1px; }
+notebook > header.bottom > tabs > tab { border-radius: 0 0 9px 9px; }
+notebook > header.bottom > tabs > tab:checked { box-shadow: none; border-top-color: transparent; margin-top: -1px; }
+notebook > header.left > tabs > tab   { border-radius: 9px 0 0 9px; }
+notebook > header.left > tabs > tab:checked   { box-shadow: none; border-right-color: transparent; margin-right: -1px; }
+notebook > header.right > tabs > tab  { border-radius: 0 9px 9px 0; }
+notebook > header.right > tabs > tab:checked  { box-shadow: none; border-left-color: transparent; margin-left: -1px; }
+
+stackswitcher > button:not(.flat) { border-radius: 999px; }
+stackswitcher > button:not(.flat):checked {
+  color: #ffffff;
+  border-color: transparent;
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.13);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.14), inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 2px 8px rgba(0, 0, 0, 0.38);
+}
+
+/* App window backdrop: deep-space gradient (site card language, image 29).
+ * Only the top-level window; views, lists and popovers keep their flat surfaces
+ * (set as a background-image because @define-color cannot hold a gradient). */
+window.background,
+window.csd,
+window.solid-csd {
+  /* Translucent glass backdrop (#448): gradient carries alpha and the opaque base
+   * window_bg_color is cleared, so the window reads as frosted glass. labwc shows
+   * translucency (no blur); blur-capable compositors turn it into true acrylic (#446). */
+  background-color: transparent;
+  background-image: linear-gradient(150deg, rgba(23, 26, 33, 0.94) 0%, rgba(16, 18, 24, 0.94) 32%, rgba(10, 11, 15, 0.94) 66%, rgba(7, 7, 9, 0.94) 100%);
+}
+/* Let the backdrop flow continuously behind the header (no solid bar cutting the
+ * gradient at the top), so the window reads as one card-like surface. */
+headerbar,
+headerbar.default-decoration {
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
+}
+
+/* Container surfaces follow the window gradient: made transparent so the backdrop
+ * shows through (one continuous surface), then delineated as cards with a subtle
+ * border + rounded corners (site card language, image 34). */
+.view, iconview, iconview.view,
+textview, textview > text,
+treeview.view, columnview.view, columnview, columnview > listview,
+listview, list, gridview,
+notebook, notebook > stack,
+scrolledwindow, scrolledwindow > viewport {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Row / cell / view selection uses the brand cyan (base hardcodes Adwaita blue). */
+.view:selected, .view:selected:focus,
+textview > text:selected, textview > text:selected:focus,
+iconview:selected, iconview:selected:focus,
+flowbox > flowboxchild:selected, gridview > child:selected,
+columnview.view:selected, columnview.view:selected:focus,
+treeview.view:selected, treeview.view:selected:focus,
+row:selected,
+calendar > grid > label.day-number:selected {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+row.activatable:selected:hover,
+row.activatable:selected.has-open-popup {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+frame > border {
+  border-color: rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+}
+scrolledwindow.frame,
+scrolledwindow.view,
+frame.view,
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 12px;
+  background-color: transparent;
+}
+notebook > header,
+notebook > header > tabs {
+  border-color: rgba(255, 255, 255, 0.09);
+  background-color: transparent;
+  background-image: none;
+}
+/* Base paints the notebook content gray once it has tabs; keep it transparent
+ * (higher-specificity selector to match the base rule). */
+notebook > stack:not(:only-child) {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Focus rings use the brand cyan instead of Adwaita blue. */
+*:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.45);
+}
+
+/* Toolbars & search bars follow the window backdrop (base paints them #353535). */
+.toolbar,
+searchbar > revealer > box {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Keep surfaces on-theme when the window is unfocused (base repaints them gray
+ * in the :backdrop state, e.g. listview/list #303030, headerbar #353535). */
+.view:backdrop, listview:backdrop, list:backdrop,
+treeview.view:backdrop, columnview.view:backdrop, columnview:backdrop,
+textview:backdrop, textview > text:backdrop,
+scrolledwindow:backdrop, notebook:backdrop, notebook > stack:backdrop {
+  background-color: transparent;
+  background-image: none;
+}
+headerbar:backdrop,
+.titlebar:backdrop:not(headerbar) {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Popovers: deep elevated card surface + subtle border (base hardcodes gray
+ * #2d2d2d on popover contents, so popover_bg_color alone never reached them). */
+popover.background > contents {
+  background-color: rgba(22, 23, 27, 0.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.55);
+}
+popover.background > arrow {
+  background-color: rgba(22, 23, 27, 0.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+popover.background > contents separator {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Emoji picker / completion hover + menubar selection use brand cyan. */
+popover.emoji-picker emoji:focus,
+popover.emoji-picker emoji:hover,
+emoji-completion-row:focus,
+emoji-completion-row:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+menubar > item:selected {
+  box-shadow: inset 0 -3px rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+}
+
+/* Menu popovers have their own (higher-specificity) gray body rule — override it. */
+popover.menu.background > contents {
+  background-color: rgba(22, 23, 27, 0.72);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+popover.menu > arrow {
+  background-color: rgba(22, 23, 27, 0.72);
+  backdrop-filter: blur(18px);
+}
+popover.menu modelbutton:selected {
+  background-color: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+}
+
+/* Sidebar surface follows the window gradient (base paints .sidebar #313131). */
+.sidebar {
+  background-color: transparent;
+}
+
+/* Stack / navigation sidebars: neutral translucent selection pill (site nav
+ * language), base uses gray #202020. */
+stacksidebar row:selected,
+.navigation-sidebar > row:selected {
+  background-color: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+  border-radius: 8px;
+}
+stacksidebar row:selected:hover,
+.navigation-sidebar > row:selected:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+}
+
+/* List / tree / column headers stay FLAT (never light pills). Selectors repeat
+ * the :not() chain + context elements to outrank the content-button rule. */
+columnview header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+treeview.view header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+treeview header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular),
+.view header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular) {
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: inset 0 -1px rgba(255, 255, 255, 0.08);
+  color: inherit;
+}
+columnview header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+treeview.view header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+treeview header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover,
+.view header button:not(.flat):not(.osd):not(.suggested-action):not(.destructive-action):not(.circular):hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  background-image: none;
+}
