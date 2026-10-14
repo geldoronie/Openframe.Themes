@@ -1,16 +1,16 @@
 {
   "name" : "Openframe The Explorer - Light",
-  "description" : "The official Openframe light theme",
+  "description" : "",
   "gtk_theme" : "OpenFrame-Light",
   "icon_theme" : "Colloid-Light",
   "cursor_theme" : "Ubuntosh-Icons",
-  "labwc_theme" : "Boron-dark",
+  "labwc_theme" : "Boron-light",
   "cursor_size" : 24,
   "font" : "Manrope 9",
-  "wallpaper" : "backgrounds/2K_20261009232301.jpg",
+  "wallpaper" : "backgrounds/openframe-the-explorer---light-2K_20261009232301.jpg",
   "wallpaper_display" : "center",
   "background_color" : "#0b0b2a",
   "color_scheme" : "light",
-  "version" : "1.1.5",
+  "version" : "1.1.7",
   "bundle_format" : 2
 }

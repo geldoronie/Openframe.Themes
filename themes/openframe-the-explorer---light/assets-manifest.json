@@ -19,7 +19,7 @@
     {
       "component" : "labwc-theme",
       "source" : "labwc-theme",
-      "apply_target" : "~/.local/share/themes/Boron-dark"
+      "apply_target" : "~/.local/share/themes/Boron-light"
     },
     {
       "component" : "greeter-gtk-theme",
@@ -55,6 +55,11 @@
       "component" : "window-manager",
       "source" : "window-manager.json",
       "apply_target" : "~/.config/openframe/window-manager.json"
+    },
+    {
+      "component" : "osd",
+      "source" : "osd.json",
+      "apply_target" : "~/.config/openframe/osd.json"
     },
     {
       "component" : "wayfire",
