@@ -1,0 +1,18 @@
+{
+  "enabled" : true,
+  "show_volume" : true,
+  "show_brightness" : true,
+  "show_media" : true,
+  "position" : "bottom",
+  "margin" : 96,
+  "timeout_ms" : 1500,
+  "background_color" : "#1c2133",
+  "use_custom_background_color" : false,
+  "text_color" : "#77767b",
+  "use_custom_text_color" : false,
+  "use_system_font" : true,
+  "font" : "Sagar Medium 10",
+  "opacity" : 0.64000000000000001,
+  "border_radius" : 18,
+  "follow_accent" : false
+}

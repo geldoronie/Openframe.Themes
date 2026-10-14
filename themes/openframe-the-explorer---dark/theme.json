@@ -1,16 +1,16 @@
 {
   "name" : "Openframe The Explorer - Dark",
-  "description" : "The official Openframe Dark theme",
+  "description" : "",
   "gtk_theme" : "OpenFrame-Dark",
   "icon_theme" : "Colloid-Dark",
   "cursor_theme" : "Ubuntosh-Icons",
   "labwc_theme" : "Boron-dark",
   "cursor_size" : 24,
   "font" : "Manrope 9",
-  "wallpaper" : "backgrounds/2K_20261009232430.jpg",
+  "wallpaper" : "backgrounds/openframe-the-explorer---dark-2K_20261009232430.jpg",
   "wallpaper_display" : "center",
   "background_color" : "#0b0b2a",
   "color_scheme" : "dark",
-  "version" : "1.1.5",
+  "version" : "1.1.6",
   "bundle_format" : 2
 }

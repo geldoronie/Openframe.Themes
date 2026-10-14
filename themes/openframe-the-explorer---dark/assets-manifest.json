@@ -52,6 +52,11 @@
       "apply_target" : "~/.config/openframe/window-manager.json"
     },
     {
+      "component" : "osd",
+      "source" : "osd.json",
+      "apply_target" : "~/.config/openframe/osd.json"
+    },
+    {
       "component" : "wayfire",
       "source" : "wayfire",
       "apply_target" : "~/.config/openframe/wayfire"
