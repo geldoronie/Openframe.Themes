@@ -7,10 +7,10 @@
   "labwc_theme" : "Boron-dark",
   "cursor_size" : 24,
   "font" : "Manrope 9",
-  "wallpaper" : "backgrounds/openframe-the-explorer---dark-openframe-the-explorer---dark-2K_20261009232430.jpg",
+  "wallpaper" : "backgrounds/openframe-the-explorer---dark-openframe-the-explorer---dark-openframe-the-explorer---dark-2K_20261009232430.jpg",
   "wallpaper_display" : "center",
   "background_color" : "#0b0b2a",
   "color_scheme" : "dark",
-  "version" : "1.1.7",
+  "version" : "1.1.8",
   "bundle_format" : 2
 }
