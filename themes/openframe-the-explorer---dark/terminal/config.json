@@ -13,6 +13,7 @@
   "audible_bell" : true,
   "bold_is_bright" : true,
   "shell" : "",
+  "ai_provider" : "Claude Code Local",
   "palette" : [
     "#1c2128",
     "#e06c75",

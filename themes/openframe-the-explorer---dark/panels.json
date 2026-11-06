@@ -7,7 +7,7 @@
       "monitor_target" : "all",
       "position" : "bottom",
       "size" : 42,
-      "width_mode" : "fixed",
+      "width_mode" : "expanded",
       "width_pixels" : 1920,
       "width_align" : "center",
       "height_mode" : "expanded",
@@ -180,11 +180,12 @@
           "type" : "windows-list",
           "config" : {
             "icon_only" : true,
-            "flat_button" : true,
-            "icon_size" : 16,
-            "button_padding_h" : 13,
+            "icon_size" : 22,
+            "button_padding_h" : 10,
             "button_padding_v" : 1,
-            "group_by" : "app"
+            "flat_button" : true,
+            "group_by" : "app",
+            "pinned_apps" : []
           }
         },
         {
